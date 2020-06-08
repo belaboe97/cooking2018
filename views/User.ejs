@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../css/customstyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/animate.css">
+    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="../bilder/favicon-16x16.png">
+
+    <title>Glutenfrei Kochen e.V</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+            <a href="/gerichte"><img src="../bilder/cook.png"></a>
+            </div>
+            <a href="#">hahahaaaa</a>
+            <div class="dropdown">
+                    <button class="button dropbtn">Rezepte
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="upload">Upload</a>
+                      <a href="#">Meine Rezepte</a>
+                      <a href="#">Rezepte bearbeiten</a>
+                    </div>
+            </div>
+            <%if (User === undefined) { %>
+            <div  class="login-container mq">
+              <form action="/users/login" method="POST">
+                <input name="email" class="userlog" type="text" placeholder="Username.." name="Username">
+                <a id="login" href="account">Konto erstellen</a>
+                <input name="password" type="text" placeholder="Userpassword.." name="UserPw">
+                <a id="pwLost" href="#">Passwort vergessen?</a>
+                <button type="submit"><i class="fas fa-sign-in-alt"></i></button>
+              </form>
+              <% } %>
+              
+              <%if (User !== undefined) { %>
+                <p style="color:green">Du bist eingeloggt<form action="/users/logout"><button type="submit">Logout</button></form></p> 
+              <% } %>
+      </div>
+      <div id="search" class="search-container mq">
+              <form action="/">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit" style="padding-right:10rem;position:absolute"><i class="fa fa-search"></i></button>
+              </form>
+      </div>
+</nav>
+</header>
+<hr>
+<div class="inhalt">
+<div></div>
+<div class="deleteAccount">
+<% for(var i=0; i<User.length; i++) {%>
+    <div id="<%= User[i]._id %>" class="deleteAccount.inner">
+     Name des Users: <%= User[i].name %>  Email: <%= User[i].email %> 
+        <button onclick="deleteUser('<%= User[i]._id %>')" ><i class="fas fa-minus-circle"></i></button>
+    </div>
+
+<% } %>
+</div>
+</div>
+<div></div>
+<script language="javascript">
+    function deleteUser(userId){
+    console.log('ich will was löschen')
+    fetch('delete', {
+    method: 'delete',
+    
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify( {
+        'id' : userId
+    })
+  })
+  .then(res => {
+    if (res.ok) return res.json()
+  }).
+  then(data => {
+    console.log(data);
+    window.location.reload();
+ 
+  })
+        console.log('hey', userId)
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,457 @@
+nav{    
+
+display:flex;
+justify-content: space-around;
+align-items:center;
+min-height: 3.5rem;
+font-family: 'Yanone Kaffeesatz', sans-serif;
+width: 80%;
+margin-left:10%;
+
+
+}
+nav > a{
+        font-family: 'Yanone Kaffeesatz', sans-serif;  
+        text-decoration: none;  
+        color: black;
+}
+@media print {
+       nav{display:none}
+       .inhalt{display:none}
+       
+}
+
+@media (max-width: 1120px){
+        nav{
+               display:flex;
+        }
+        .mq{    display:block;
+                text-align:center;
+                width:100%; 
+
+        }
+        .logo{text-align: center;
+                display:block; 
+        }
+}
+.userlog::after{
+        content:'hey'
+}
+.dropdown {
+        float: left;
+        overflow: hidden;
+      }
+      
+      /* Dropdown button */
+      .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color:black;
+        background-color: inherit;
+        font-family: inherit; /* Important for vertical align on mobile phones */
+        margin: 0; /* Important for vertical align on mobile phones */
+      }
+      
+
+      
+      /* Dropdown content (hidden by default) */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      /* Links inside the dropdown */
+      .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+      
+      /* Add a grey background color to dropdown links on hover */
+      .dropdown-content a:hover {
+        background-color: #ddd;
+      }
+      
+      /* Show the dropdown menu on hover */
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+.banner {
+        position:fixed;
+        width:14%; 
+        background:url(https://media.giphy.com/media/U7aEVgpywdgD7iIVuE/giphy.gif) ; 
+        background-repeat: no-repeat;
+        background-color: rgb(0,0,0,0.98); 
+        height: 40rem; 
+        font-size: 1rem; 
+        text-align:center;
+        color: white;
+        
+        background-position-x: -140px;
+        background-position-y: -35px;
+}
+
+.banner a{
+        margin-top:100px;
+        text-decoration: none; 
+        background: red; 
+        font-size: 2rem; 
+        padding:0.3rem; 
+        transition: 0.3s;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        color: white; 
+}
+.banner a:hover{
+        background: white; 
+        cursor: pointer; 
+        color: red; 
+        transition:0.3s; 
+
+}
+.bannerRezept {
+        position:fixed;
+        width:14%; 
+        background:url(https://media.giphy.com/media/sDkNZOyUjWxvq/giphy.gif) ; 
+        background-repeat: no-repeat;
+        background-color: rgb(0,0,0,0.98); 
+        height: 40rem; 
+        font-size: 1rem; 
+        text-align:center;
+        color: white;
+        
+        background-position-x: -90px;
+        background-position-y: -35px;
+}
+.bannerRezept a{
+        margin-top:100px;
+        text-decoration: none; 
+        background: red; 
+        font-size: 2rem; 
+        padding:0.3rem; 
+        transition: 0.3s;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        color: white; 
+}
+.bannerRezept a:hover{
+        background: white; 
+        cursor: pointer; 
+        color: red; 
+        transition:0.3s; 
+
+}
+
+.big-text{font-size:3rem;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.small-text{font: size 1rem;
+        margin:1rem;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+
+}
+
+/* Überschriften */ 
+
+.headings-small{
+        font-size:2rem;
+        font-family:'Shadows Into Light', cursive;
+        display:block;
+        text-decoration:underline ;
+        margin: 1rem
+}
+.headings-big{
+        font-size:3rem;
+        font-family:'Shadows Into Light', cursive;
+        display:inline-block;
+        font-weight:bold;
+        text-align: center;
+}
+.headings-big::before{
+        content:open-quote;
+        color:red
+}
+.headings-big::after{
+        content:close-quote;
+        color:red;
+}
+.headings-ad{
+        text-align: center;
+        margin-left:1.5rem;
+        font-size:1.5rem;
+        font-family:'Shadows Into Light', cursive;
+        display:inline-block;
+        font-weight:bold;
+        text-align: center;
+}
+#sale{margin-top:22rem;}
+
+.wrapper{
+        display:grid; 
+        grid-template-columns: 15%  60% 15%;
+        gap: 4rem; 
+        grid-auto-rows: minmax(auto)
+}
+
+
+.border{
+        border: rgb(0,0,0,0.7) solid 1px;
+        padding: 1rem; 
+        
+
+}
+.box-style{
+        padding-left:4rem;
+        padding-right:4rem;
+}
+.inbox-style{
+        margin:2rem;
+}
+.main-content {
+        display: grid; 
+        grid-template-columns: 30% 70%;
+        gap: 1rem; 
+        grid-auto-rows: minmax(100px, auto);
+}
+.upload-content {
+                border: black solid 1px;
+                padding-top:5rem;
+                padding:1rem;
+                display: grid; 
+                grid-template-columns: 20% 70%;
+                gap: 1rem; 
+                grid-auto-rows: minmax(80px, auto);
+                border-radius: 5px; 
+                font-family: 'Yanone Kaffeesatz', sans-serif;
+                letter-spacing: 1.5px;
+                background-image:    url(../bilder/background1.jpg);
+                background-size:     cover;                      
+                background-repeat:   no-repeat;
+                background-position: center center; 
+}
+@media (max-width: 750px){
+        #tablezu{
+        display:block;
+        text-align:center;
+        } 
+        .wrapper{
+        width:40%;
+        display:inline-block;
+        padding:2rem; 
+        }
+        .upload-content{
+        text-align:center; 
+        margin:2rem;
+        width:27rem;
+        display:inline-block;
+        padding:2rem; 
+        margin-left:-10%;
+        background-color: rgb(0,0,0,0.05)
+        }
+        .createEl{
+        margin:1rem; 
+        }
+        .banner{
+        display:none;                 
+        }
+}
+.ueberbild{
+        grid-column:1/3;
+        background:url(../bilder/Unbenannt.png) no-repeat;
+        margin-left:10rem;
+}
+.pic1{  background-image:    url(../bilder/brot.jpg);
+        background-size:     cover;                      
+        background-repeat:   no-repeat;
+        background-position: center center; 
+}
+.pic2{  background-image:    url(../bilder/cake1.jpg);
+        background-size:     cover;                      
+        background-repeat:   no-repeat;
+        background-position: center center; 
+}
+.ueberschrift{
+
+content:"Upload Rezept";
+background-size:     cover;                      
+background-repeat:   no-repeat;
+background-position: center center;
+grid-column:1/3;
+grid-row:1/2;
+height:auto;
+ 
+}
+.rating{
+      position: absolute;
+      transform: translate(-50%, -50%) rotateY(180deg);
+      display:flex;
+      width:60px;
+      margin-left:22rem;
+      margin-top: -1rem;
+      }  
+      
+.font{content:'f079';
+          font-family:"Font Awesome 5 Free";
+          display: inline-block;
+          color:black;
+          position:relative}
+
+.text-font{
+                padding:0.5em;
+                font-family: 'Yanone Kaffeesatz', sans-serif;
+                letter-spacing:2px;
+        }
+        .color{
+                background-color: rgb(0,0,0,0.05)
+        }
+        .input{background-color:#ccc;}
+.createEl{margin-bottom:1.5rem}
+.center{text-align: center;
+        margin-top:0.5rem;
+        font-size:1.3rem;
+}
+#btn1{background-color:lightgreen;
+                        color:black;
+                        letter-spacing: 0.1rem;
+                        font-size: 0.8rem;
+        }
+#login{
+        display:block;        
+        position:absolute;
+        margin-top: 0.25rem;
+        font-size: 0.8rem;
+        margin-left:0.2rem;
+}
+#pwLost{
+        display:block;        
+        position:absolute;
+        margin-top: 0.25rem;
+        font-size: 0.8rem;
+        margin-left:12rem;
+}
+
+.login-sheet{
+        display:grid;
+        grid-template-columns: 17% 70% 17%;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+
+        padding:1rem;
+
+}
+.container2{
+        display:grid;
+        grid-template-columns: 60% 40%;
+        background-color:rgb(0,0,0,0.03);
+        letter-spacing: 1px;;
+        margin-left:1rem;
+        padding: 1%;
+        max-height:500px;
+}
+#sidepic{background-image:    url(../bilder/edgar-castrejon-s6BrlKXy7e0-unsplash.jpg);
+        background-size:     cover;                      
+        background-repeat:   no-repeat;
+        background-position: center center; 
+        margin-left: 1rem;
+}
+.p1{    margin-top:20px;
+        border-width:1px;
+        border-color:rgb(0,0,0,0.2);
+        border-style:"solid"
+}
+.label-field{
+        margin-top:1rem;
+        margin-bottom: 1rem;
+        
+}
+
+.button-exit{
+        font-size:50px;
+        position: absolute;;
+        margin-top:-33rem;
+        border:none;
+    
+        }
+
+
+button:focus{outline:0}
+
+.hide{
+        visibility: hidden;
+}
+.inhalt{
+       display:grid;
+       grid-template-columns: 0.7fr  2.5fr 1fr;
+       gap:0.2rem;
+}
+.rezept-grid{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+
+}
+       
+       
+}
+.box2{
+        display:inline-block;
+        width:100%;   
+}
+
+
+
+.button-rezepte{
+        background-color:lightgoldenrodyellow;
+        display:flex;
+        width:30%;
+        margin:0.5rem;
+        display:inline-block;
+        text-align:center;
+}
+
+.rezepte-forma{
+        display:grid; 
+        grid-auto-columns: 30% 100%;
+        gap: 2rem;
+        margin-left:3rem;
+}
+.img-dashboard{
+                height: 300px;
+                width: 400px;
+                overflow: hidden;
+        
+}
+.img-dashboard img{
+                height: auto;
+                width: 400px;
+}
+.grid-column{
+        margin-top:1rem;
+        position: absolute;
+        margin-left:31rem;
+        background-color: rgb(255,255,255,0.5);
+        box-sizing: border-box;
+        width:25%;
+        text-decoration: underline;
+        border-radius:0.5rem;
+        
+}
+.deleteAccount{
+        border: solid black 1px; 
+        padding: 2rem;
+        margin:3px;
+
+}
+.deleteAccount.inner{
+        display:grid;
+        grid-auto-columns: 40% 40% 10%;
+}
+.footer{
+        position: fixed;
+        bottom: 0px;
+}

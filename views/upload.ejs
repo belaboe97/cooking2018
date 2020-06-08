@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../css/customstyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/animate.css">
+    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="../bilder/favicon-16x16.png">
+
+    <title>Glutenfrei Kochen e.V</title>
+</head>
+<body>
+
+  <%- include('./partials/header'); -%>
+
+<hr>
+<div class="inhalt">
+
+  <%- include('./partials/werbung-1'); -%>
+                 <div class="headings-big grid-column">Upload</div>
+                <form action="/gerichte" method="POST" enctype="multipart/form-data">
+                <div class="upload-content">
+                <div></div>
+                <div></div>
+
+                <label class="createEl center"><u>Name des Grichts:</u></label>
+                <input name="name" class="createEl lgrey" type="text" placeholder="Gerichtname..">
+                <label class="createEl center"><u>Autor des Textes:</u></label>
+                <input name="author"class="createEl"type="text"placeholder="Verfasser..">
+                <label class="createEl center"><u>Personenanzahl:</u></label>
+                <input name="personen"class="createEl"type="number"placeholder="Für wieviele Personen ist das Gericht ausgelegt?">
+                <label class="createEl center"><u>Kochanleitung:</u></label>
+                <input name="anleitung"class="createEl"type="message"placeholder="So wirds gemacht..">
+                <label class="createEl center"><u>Zutaten für das Gericht:</u></label>
+                
+
+
+                <div class="createEl">
+                <table>
+                <tr>
+                    <th class="tb1 center">Zutat:</th>
+                    <th class="tb2 center">Menge:</th>
+                    <th class="tb2 center">Mengeneinheit:</th>
+                </tr>
+                <% for(var i=0; i<9 ; i++) {%>
+                <tr id="tablezu">
+                        <th><input name="zutat" type="text" placeholder="Zutaten" id="zutaten"></th>
+                        <th><input name="menge" type="number" placeholder="Menge" id="menge"></th>
+                        <th><select name="mengeneinheit" placeholder="Mengeneinheit">
+                          <option></option>
+                          <option>Kilogramm</option>
+                          <option>Gramm</option>
+                          <option>Esslöffel</option>
+                          <option>Teelöffels</option>
+                          <option>Liter</option>
+                          <option>Milliliter</option>
+                          <option>Stückzahl</option>
+                        </select n></th>
+                </tr>
+                <% } %>
+               
+                </table>   
+                <button id="btn1" type="button" value="submit" class="createEl">Füge Zutat hinzu</button>  
+               </div>
+                <label class="createEl center"><u>Beschreibung des Gerichts:</u></label>
+                <textarea name="text" class="createEl" type="message" placeholder="Message.." ></textarea>
+                <label class="createEl center"><u>Foto des Grichts:</u></label>
+
+                <input name="gerichtImage" type="file">
+                <div></div>
+                <button id="btn1" class="full-width">Absenden</button>        
+              </form>
+            </div>
+                    <%- include('./partials/Rezeptbanner'); -%>
+            </div>
+</body>
+<script>
+
+  var  advertisment = document.getElementById('hide1');
+  var obj = document.getElementById('b1');
+  obj.addEventListener("click",function(){
+    if( advertisment.className === ""){
+      advertisment.className = "hide"
+    }
+  })
+
+  
+let rezepte = []; 
+var button1 = document.getElementById('btn1');
+button1.addEventListener('click',
+function productsAdd(){
+  // input value
+  var zutaten = document.getElementById('zutaten').value;
+  var menge = document.getElementById('menge').value; 
+ 
+  var table = document.getElementsByTagName('table')[0]; // is the first table 
+  // insert in table  
+  var newRow = table.insertRow(table.rows.length);  
+  var cell1 = newRow.insertCell(0);
+  var cell2 = newRow.insertCell(-1);
+
+  cell1.innerHTML = zutaten; 
+  cell2.innerHTML = menge; 
+}
+)
+const addRezept = (ev) => {
+let rezept = {
+  id: Date.now(), 
+  zutat: zutaten.value, 
+  menge : menge.value,
+ 
+}
+rezepte.push(rezept);  
+console.warn('added', {rezepte}); 
+let pre = document.querySelector('#msg pre');
+pre.textContent ='\n' + JSON.stringify(rezepte, '\t',2 )
+//saving to localStorage
+localStorage.setItem('MyRezeptList', JSON.stringify(rezepte));    
+console.log(rezepte);
+console.log(rezept)
+console.log(addRezept);
+
+}
+
+
+//stellt sicher das Webseite vor dem ausführen geladen wird
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('btn1').addEventListener('click', addRezept); 
+}); 
+
+</script>
+
+</html>

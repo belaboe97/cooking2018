@@ -1,0 +1,37 @@
+<header>
+    <nav>
+        <div class="logo">
+        <a href="/"><img src=../bilder/cook.png></a>
+        </div>
+        <div class="dropdown mq ">
+                <button class="button dropbtn mq">Rezepte
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content mq">
+                  <a href="/upload">Upload</a>
+                  <a href="#">Meine Rezepte</a>
+                  <a href="#">Rezepte bearbeiten</a>
+                </div>
+        </div>
+        <%if (User === undefined) { %>
+          <div  class="login-container mq">
+            <form action="/users/login" method="POST">
+              <input name="email" class="userlog" type="text" placeholder="Username.." name="Username">
+              <a id="login" href="account">Konto erstellen</a>
+              <input name="password" type="password" placeholder="Userpassword.." name="UserPw">
+              <a id="pwLost" href="#">Passwort vergessen?</a>
+              <button type="submit"><i class="fas fa-sign-in-alt"></i></button>
+            </form>
+            <% } %>
+            <%if (User !== undefined) { %>
+              <p style="color:green">Du bist eingeloggt<form action="/users/logout"><button type="submit">Logout</button></form></p> 
+              <% } %>
+        </div>
+        <div id="search" class="search-container mq">
+                <form action="/">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+        </div>
+    </nav>
+</header>

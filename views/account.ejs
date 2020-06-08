@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../css/customstyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/animate.css">
+    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="../bilder/favicon-16x16.png">
+    
+
+
+    <title>Glutenfrei Kochen e.V</title>
+</head>
+<body>
+
+<%- include('./partials/header'); -%>
+<hr>
+
+      <div class="inhalt small-text">
+
+        <%- include('./partials/werbung-2'); -%>
+
+        <div class="container2">
+        <div>
+         <h1 style="text-align: center;"><div class="headings-big"><u>Mitglieder Anmeldung</u></div></h1> 
+         <h4><b>Mit der Anmledung erhalten Sie</b> </h4><p class="p1">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit ame<p></p> <div class="twelve columns"style="margin-top:10%">
+
+        </p>
+
+        <div class="login-div ">
+
+         <%- include('./partials/messages'); -%> 
+         <form action="/users/register" method="POST">
+          <label class="label-field">Name</label>
+                    <input name="name" class="u-full-width" type="text" placeholder="Enter name" style="max-width:35%" value="<%= typeof name != 'undefined' ? name : '' %>">
+                    <label class="label-field">Passwort</label>
+                    <input name="password"  value="<%= typeof password != 'undefined' ? password : '' %>" type="password" placeholder="Passwort eingeben">
+                    <label class="label-field">Passwort wiederholen</label>
+                    <input name="passwordWdhl" value="<%= typeof passwordWdhl != 'undefined' ? passwordWdhl : '' %>" type="password" placeholder="Passwort wiederholen"><p id="outp1"></p>    
+                  </div>
+                  <br>
+                  <label class="label-field">Mitgliedsnummer</label>
+                  <input type="number" placeholder="Mitgliedsnummer">
+                    <label class="label-field">Über wen sind sie zu Gluten-frei Kochen.ev gekommen?</label>
+                    <textarea class="u-full-width" placeholder="Enter message"  ></textarea>
+                    <br>
+                    <label class="label-field" >Email Adresse</label>
+                    <input name="email" class="u-full-width" type="email" placeholder="Email" value="<%= typeof email != 'undefined' ? email : '' %>">
+                        <input name="checkbox" type="checkbox">
+                        <span class="label-body" style="margin-left: 0%;">Subscribe to email </span>
+                      </label>
+                      <br>
+                    <input id="absenden" class="label-field" type="submit" value="Abschicken">
+                 
+                  </div>
+              </div>
+            <div id="sidepic"></div>
+          </div>
+      </form>
+  </div>
+  </div>
+
+  
+  <footer class="footer">
+
+  </footer>
+  <script>
+    var advertisment = document.getElementById('hide1');
+    var obj = document.getElementById('b1');
+    obj.addEventListener("click", function () {
+      if (advertisment.className === "") {
+        advertisment.className = "hide"
+
+      }
+    })
+
+  //stellt sicher das Webseite vor dem ausführen geladen wird
+  document.addEventListener('DOMContentLoaded', () => {
+
+  }); </script>
+</body>
+</html>

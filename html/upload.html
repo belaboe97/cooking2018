@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../css/customstyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/animate.css">
+    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">;
+    <title>Glutenfrei Kochen e.V</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+            <a href="index.html"><img src=../bilder/cook.png></a>
+            </div>
+            <a href="#">hahah</a>
+            <div class="dropdown mq ">
+                    <button class="button dropbtn mq">Rezepte
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content mq">
+                      <a href="#">Upload</a>
+                      <a href="#">Meine Rezepte</a>
+                      <a href="#">Rezepte bearbeiten</a>
+                    </div>
+            </div>
+            <div  class="login-container mq">
+                    <form action="/action_page.php">
+                      <input class="userlog" type="text" placeholder="Username.." name="Username">
+                      <a id="login" href="createAccount.html">Konto erstellen</a>
+                      <input type="text" placeholder="Userpassword.." name="UserPw">
+                      <a id="pwLost" href="#">Passwort vergessen?</a>
+                      <button type="submit"><i class="fas fa-sign-in-alt"></i></button>
+                    </form>
+            </div>
+            <div id="search" class="search-container mq">
+                    <form action="/action_page.php">
+                      <input type="text" placeholder="Search.." name="search">
+                      <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+            </div>
+        </nav>
+    </header>
+<hr>
+<div class="wrapper">
+        <div class="banner animate flash">
+            <div id="sale"class ="big-text animate tada"><u>Glutenfreies Kochbuch 20% SALE</u></div>
+            <br> 
+            <a id="buyLink" href="#">Schau vorbei!</a>
+          
+        </div>  
+        <div class="upload-content">
+          
+                <div class="ueberschrift"></div>
+                <form action="/gerichte" method="POST">
+                <label class="createEl center"><u>Name des Grichts:</u></label>
+                <input name="name" class="createEl lgrey" type="text" placeholder="Gerichtname..">
+                <label class="createEl center"><u>Autor des Textes:</u></label>
+                <input name="author"class="createEl"type="text"placeholder="Verfasser..">
+                <label class="createEl center"><u>Zutaten für das Gericht:</u></label>
+                <div class="createEl">
+                <table>
+                <tr>
+                    <th class="tb1 center">Zutat:</th>
+                    <th class="tb2 center">Menge:</th>
+                </tr>
+                <tr id="tablezu">
+                        <th><input name="Zutat" type="text" placeholder="Zutaten" id="zutaten"></th>
+                        <th><input name="Menge" type="number" placeholder="Menge" id="menge"></th>
+                </tr>
+            
+                </table>   
+                <button id="btn1" class="createEl">Füge Zutat hinzu</button>  
+               </div>
+                <label class="createEl center"><u>Beschreibung des Gerichts:</u></label>
+                <textarea name="text" class="createEl" type="message" placeholder="Message.." ></textarea>
+                <label class="createEl center"><u>Foto des Grichts:</u></label>
+                <div name="img" class="createEl"> <input type="file" id="real-file">
+
+                </div> 
+                <div></div>
+                <button id="btn1" class="full-width">Absenden</button>        
+              </form>
+              </div>
+</div>
+
+        <script data-main="create.js" src="require.js"></script>
+        <script data-main="server.js" src="require.js"></script>
+</body>
+</html>
+

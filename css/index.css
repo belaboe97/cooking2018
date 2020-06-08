@@ -1,0 +1,38 @@
+
+.rating label{
+    display: block; 
+    cursor: pointer;
+    width:100%; 
+    
+  }
+  .rating label::before{
+    content:'\f005';
+    font-family:"Font Awesome 5 Free";
+    position:relative;
+    display: block;
+    font-size:20px;
+    color:#ccc;
+  }
+  .rating label:after{
+    content: '\f005';
+    font-family:"Font Awesome 5 Free";
+    position:absolute;
+    display: inline-block; 
+    font-size:20px; 
+    color:gold;
+    top: 0;
+    opacity: 0; 
+    transition: .5s; 
+    text-shadow: 0 2px 5px rgb(0,0,0,05)
+  }
+  .rating label:hover:after,
+  .rating label:hover ~ label:after,
+  .rating label:hover:after{
+    opacity: 1; 
+  }
+  #star1{display:none}
+  #star2{display:none}
+  #star3{display:none}
+  #star4{display:none}
+  #star5{display:none}
+  
